@@ -33,9 +33,9 @@
 - Insert The roles through Hard coded
 -   INSERT INTO role VALUES (1,'ROLE_ADMIN');
 
--   mysql> insert into role values(2,"ROLE_USER");
+-   insert into role values(2,"ROLE_USER");
 
--   mysql> insert into role values(3,"ROLE_CREATOR");
+-  insert into role values(3,"ROLE_CREATOR");
 
 -   After that Do Sign Up Use Below Dummy Details
 -   Then Do Sign up
