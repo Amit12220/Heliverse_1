@@ -33,7 +33,7 @@
 - Insert The roles through Hard coded
 -   INSERT INTO role VALUES (1,'ROLE_ADMIN');
 
--   mysql> insert into role values(2,"ROLE_user");
+-   mysql> insert into role values(2,"ROLE_USER");
 
 -   mysql> insert into role values(3,"ROLE_CREATOR");
 
@@ -55,7 +55,7 @@ Sign Up :
 ```
 # Just afetr signup ypu will get otp for email verification
 
-and we need dto verify
+and we need to verify OTP
 
 /verify
 http://localhost:8888/api/auth/signup
