@@ -20,6 +20,18 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtUtils  {
 	
+	private String jwtToken;
+	
+	
+	
+	public String getJwtToken() {
+		return jwtToken;
+	}
+
+	public void setJwtToken(String jwtToken) {
+		this.jwtToken = jwtToken;
+	}
+
 	private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
 	  private String jwtSecret="======================SignUpLogInApplication===========================";
@@ -30,12 +42,14 @@ public class JwtUtils  {
 
 	    UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 
-	    return Jwts.builder()
+	    jwtToken= Jwts.builder()
 	        .setSubject((userPrincipal.getUsername()))
 	        .setIssuedAt(new Date())
 	        .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
 	        .signWith(key(), SignatureAlgorithm.HS256)
 	        .compact();
+	    
+	    return jwtToken;
 	  }
 	  
 	  private Key key() {
@@ -63,5 +77,10 @@ public class JwtUtils  {
 
 	    return false;
 	  }
+
+	public String getJwtToken1() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

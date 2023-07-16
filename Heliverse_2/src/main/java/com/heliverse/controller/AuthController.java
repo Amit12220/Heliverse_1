@@ -105,7 +105,7 @@ public class AuthController {
 		  {
 			  
 			  // Create new user's account
-			    Customer user = new Customer(signUpRequest.getName(), signUpRequest.getEmail(), signUpRequest.getDob(), signUpRequest.getPhone(), encoder.encode(signUpRequest.getPassword()));
+			    Customer user = new Customer(signUpRequest.getUserName(), signUpRequest.getEmail(), signUpRequest.getDob(), signUpRequest.getPhone(), encoder.encode(signUpRequest.getPassword()));
 
 			    Set<String> strRoles = signUpRequest.getRoles();
 			    Set<Role> roles = new HashSet<>();
@@ -149,6 +149,8 @@ public class AuthController {
 		  return ResponseEntity.ok(new MessageResponse("Signup Successfull now you can login"));
 		  
 	  }
+	  
+	 
 	  
 	  
 

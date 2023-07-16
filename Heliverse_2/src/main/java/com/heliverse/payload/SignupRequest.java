@@ -44,14 +44,14 @@ public class SignupRequest {
 	private Set<String> roles;
 
 	public SignupRequest(
-			@Size(min = 4, message = "Name must have a minimum of 4 characters") @NotEmpty(message = "Name must not be empty") String name,
+			@Size(min = 4, message = "Name must have a minimum of 4 characters") @NotEmpty(message = "Name must not be empty") String userName,
 			@NotEmpty(message = "Email must not be empty") @Email(message = "Email is not valid") String email,
 			@Past(message = "Date of birth must be in the past") @NotNull(message = "DOB must not be empty") LocalDate dob,
 			@Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits") @NotEmpty(message = "Phone must not be empty") String phone,
 			@Size(min = 8, message = "Password size must be at least 8 characters") @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).*$", message = "Password must contain at least one uppercase letter, one lowercase letter, and one digit") @NotEmpty(message = "Password must not be empty") String password,
 			Set<String> roles) {
 		super();
-		this.userName = name;
+		this.userName = userName;
 		this.email = email;
 		this.dob = dob;
 		this.phone = phone;
@@ -63,12 +63,12 @@ public class SignupRequest {
 		super();
 	}
 
-	public String getName() {
+	public String getUserName() {
 		return userName;
 	}
 
-	public void setName(String name) {
-		this.userName = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmail() {
@@ -107,9 +107,10 @@ public class SignupRequest {
 		return roles;
 	}
 
-	public void setRole(Set<String> roles) {
+	public void setRoles(Set<String> roles) {
 		this.roles = roles;
 	}
+
 	
 	
 }
